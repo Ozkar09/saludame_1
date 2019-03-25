@@ -13,6 +13,10 @@ get '/makers' do
 end
 
 get "/" do
+  "HcUy6Re2LLBRtj"
+end
+
+get "/" do
   erb :hola
 end
 

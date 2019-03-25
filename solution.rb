@@ -11,3 +11,12 @@ get '/makers' do
   @name = nil
   erb :nombre
 end
+
+get "/" do
+  erb :hola
+end
+
+post "/" do
+  @name = params[:nombre]
+  erb :saludar
+end

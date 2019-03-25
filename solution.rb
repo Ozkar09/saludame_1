@@ -1,6 +1,6 @@
 require 'sinatra'
 
-get '/' do
+get '/:nombre' do
   p params
   @name = params["nombre"]
   erb :nombre

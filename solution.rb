@@ -1,5 +1,7 @@
 require 'sinatra'
 
+contador = 0
+
 get '/makers/:nombre' do
   p params
   @name = params[:nombre]
@@ -10,6 +12,17 @@ get '/makers' do
   p params
   @name = nil
   erb :nombre
+end
+
+get "/" do
+  @contador = contador
+  erb :contador
+end
+
+post "/" do
+  contador += 1
+  @contador = contador
+  erb :contador
 end
 
 get "/" do

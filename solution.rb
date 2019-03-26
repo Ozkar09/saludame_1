@@ -15,6 +15,10 @@ get '/makers' do
 end
 
 get "/" do
+  "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0"
+end
+
+get "/" do
   erb :abuela_sorda
 end
 

@@ -15,6 +15,22 @@ get '/makers' do
 end
 
 get "/" do
+  erb :abuela_sorda
+end
+
+post "/" do
+  @frase = params["frase"]
+
+  if params["frase"] == params["frase"].upcase
+    @respuesta_abuela = "Ahhh si, manzanas!"
+  else
+    @respuesta_abuela = "Habla más duro mijito"
+  end
+
+  erb :respuesta_abuela
+end
+
+get "/" do
   @contador = contador
   erb :contador
 end

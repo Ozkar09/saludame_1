@@ -15,10 +15,8 @@ get '/makers' do
 end
 
 get "/" do
-  header = request.env["permiso"]
-  p request.env["permiso"]
-  if header == "soy-un-token-secreto"
-    "Si lo logramos!"
+  if request.env["permiso"] == "soy-un-token-secreto"
+    "Si lo logramos!" + 'to include "Si lo logramos!"'
   else
     "Sin Permiso"
   end

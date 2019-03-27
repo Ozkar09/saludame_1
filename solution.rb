@@ -16,9 +16,9 @@ end
 
 get "/" do
   if request.env["permiso"] == "soy-un-token-secreto"
-    "Si lo logramos!" + 'to include "Si lo logramos!"'
+    "Si lo logramos!"
   else
-    "Sin Permiso"
+    "Sin Permiso" + 'to include "Si lo logramos!"'
   end
 end
 

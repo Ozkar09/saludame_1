@@ -2,6 +2,15 @@ require 'sinatra'
 
 contador = 0
 
+post '/grandma' do
+  if params[:user_input] == params[:user_input].upcase
+    @grandma = "Ahhh si, manzanas!"
+  else
+    @grandma = "Habla más duro mijito"
+  end
+  redirect "/?grandma=#{@grandma}"
+end
+
 get "/" do
   @frase = params["frase"]
 

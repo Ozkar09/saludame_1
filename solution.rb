@@ -2,16 +2,11 @@ require 'sinatra'
 
 contador = 0
 
-post '/grandma' do
-  if params[:user_input] == params[:user_input].upcase
-    @grandma = "Ahhh si, manzanas!"
-  else
-    @grandma = "Habla más duro mijito"
-  end
-  redirect "/?grandma=#{@grandma}"
+get "/" do
+  erb :abuela_sorda
 end
 
-get "/" do
+post "/" do
   @frase = params["frase"]
 
   if params["frase"] == params["frase"].upcase
@@ -41,10 +36,6 @@ end
 
 get "/" do
   "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0" + ' to include "Chrome"'
-end
-
-get "/" do
-  erb :abuela_sorda
 end
 
 get "/" do

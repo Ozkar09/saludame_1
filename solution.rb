@@ -2,7 +2,7 @@ require 'sinatra'
 
 contador = 0
 
-post "/" do
+post "/grandma" do
   @frase = params["frase"]
 
   if params["frase"] == params["frase"].upcase

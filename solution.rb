@@ -2,6 +2,18 @@ require 'sinatra'
 
 contador = 0
 
+post "/" do
+  @frase = params["frase"]
+
+  if params["frase"] == params["frase"].upcase
+    @respuesta_abuela = "Ahhh si, manzanas!"
+  else
+    @respuesta_abuela = "Habla más duro mijito"
+  end
+
+  erb :respuesta_abuela
+end
+
 get '/makers/:nombre' do
   p params
   @name = params[:nombre]
@@ -15,11 +27,7 @@ get '/makers' do
 end
 
 get "/" do
-  if request.env["permiso"] == "soy-un-token-secreto"
-    "Si lo logramos!"
-  else
-    "Sin Permiso" + 'to include "Si lo logramos!"'
-  end
+  request.env["HTTP_PERMISO"] == "soy-un-token-secreto" ? "Si lo logramos!" : "Sin Permiso"
 end
 
 get "/" do
@@ -28,18 +36,6 @@ end
 
 get "/" do
   erb :abuela_sorda
-end
-
-post "/" do
-  @frase = params["frase"]
-
-  if params["frase"] == params["frase"].upcase
-    @respuesta_abuela = "Ahhh si, manzanas!"
-  else
-    @respuesta_abuela = "Habla más duro mijito"
-  end
-
-  erb :respuesta_abuela
 end
 
 get "/" do
